@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Launcher} from '../../src';
 import messageHistory from './messageHistory';
-import TestArea from './TestArea';
-import Header from './Header';
-import Footer from './Footer';
-import monsterImgUrl from './../assets/monster.png';
+import searchxChatImageUrl from './../assets/searchx_chat_logo.png';
 import './../assets/styles';
 
 
@@ -22,6 +19,7 @@ class Demo extends Component {
   }
 
   _onMessageWasSent(message) {
+    message.sender = "1";
     this.setState({
       messageList: [...this.state.messageList, message]
     });
@@ -31,7 +29,7 @@ class Demo extends Component {
     const objectURL = window.URL.createObjectURL(fileList[0]);
     this.setState({
       messageList: [...this.state.messageList, {
-        type: 'file', author: 'me',
+        type: 'file', author: 'me', sender : "1",
         data: {
           url: objectURL,
           fileName: fileList[0].name
@@ -63,14 +61,12 @@ class Demo extends Component {
 
   render() {
     return <div>
-      <Header />
-      <TestArea
-        onMessage={this._sendMessage.bind(this)}
-      />
+
+
       <Launcher
         agentProfile={{
-          teamName: 'react-chat-window',
-          imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+          teamName: '',
+          imageUrl: searchxChatImageUrl
         }}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         onFilesSelected={this._onFilesSelected.bind(this)}
@@ -79,9 +75,9 @@ class Demo extends Component {
         handleClick={this._handleClick.bind(this)}
         isOpen={this.state.isOpen}
         showEmoji
+        showFile={false}
       />
-      <img className="demo-monster-img" src={monsterImgUrl} />
-      <Footer />
+
     </div>;
   }
 }

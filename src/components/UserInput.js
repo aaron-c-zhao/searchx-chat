@@ -127,6 +127,7 @@ class UserInput extends Component {
   }
 
   render() {
+    console.log(this.props);
     const { emojiPickerIsOpen, inputActive } = this.state;
     return (
       <form className={`sc-user-input ${(inputActive ? 'active' : '')}`}>
@@ -152,7 +153,7 @@ class UserInput extends Component {
               tooltip={this._renderEmojiPopup()}
             />}
           </div>
-          {this._renderSendOrFileIcon()}
+          {this.props.showFile && this._renderSendOrFileIcon()}
         </div>
       </form>
     );
@@ -162,7 +163,8 @@ class UserInput extends Component {
 UserInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  showFile: PropTypes.bool
 };
 
 export default UserInput;

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
 import FileMessage from './FileMessage';
-import chatIconUrl from './../../assets/chat-icon.svg';
+import Identicon from 'identicon.js';
+import md5 from 'md5';
 
 
 class Message extends Component {
@@ -21,6 +22,11 @@ class Message extends Component {
   }
 
   render () {
+    let options = {
+      size : 80
+    }
+    var data = new Identicon(md5(this.props.message.sender), options).toString();
+    let chatIconUrl = "data:image/png;base64," + data 
     let contentClassList = [
       'sc-message--content',
       (this.props.message.author === 'me' ? 'sent' : 'received')
@@ -31,6 +37,7 @@ class Message extends Component {
           <div className="sc-message--avatar" style={{
             backgroundImage: `url(${chatIconUrl})`
           }}></div>
+          
           {this._renderMessageOfType(this.props.message.type)}
         </div>
       </div>);

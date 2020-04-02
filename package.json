@@ -1,7 +1,7 @@
 {
-  "name": "react-chat-window",
-  "version": "1.2.0",
-  "description": "react-chat-window React component",
+  "name": "searchx-chat",
+  "version": "0.0.1",
+  "description": "searchx-chat React component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -18,23 +18,24 @@
     "gh:publish": "nwb build-demo && gh-pages -d demo/dist"
   },
   "dependencies": {
-    "emoji-js": "3.2.2",
-    "gh-pages": "^1.2.0",
-    "prop-types": "15.5.10",
-    "react-highlight.js": "1.0.5",
-    "react-linkify": "^0.2.1",
-    "socket.io-client": "2.0.3"
+    "emoji-js": "^3.5.0",
+    "gh-pages": "^2.2.0",
+    "identicon.js": "^2.3.3",
+    "md5": "^2.2.1",
+    "prop-types": "^15.7.2",
+    "react-highlight.js": "^1.0.7",
+    "react-linkify": "^0.2.1"
   },
   "peerDependencies": {
     "react": "15.x"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.13.0",
+    "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.12.4",
-    "nwb": "^0.23.0",
-    "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "nwb": "^0.24.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "author": "kingofthestack",
   "homepage": "https://kingofthestack.github.io/react-chat-window/",
