@@ -37,12 +37,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "author": "kingofthestack",
-  "homepage": "https://kingofthestack.github.io/react-chat-window/",
+  "author": "felipemoraes",
+  "homepage": "https://felipemoraes.github.io/searchx-chat/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kingofthestack/react-chat-window.git"
+    "url": "https://github.com/felipemoraes/searchx-chat.git"
   },
   "keywords": [
     "react-component"
