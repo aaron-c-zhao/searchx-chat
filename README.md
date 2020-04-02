@@ -2,10 +2,6 @@
 
 This is [SearchX](https://github.com/felipemoraes/searchx) Chat tool. It is based on [react-chat-window](https://www.npmjs.com/package/react-chat-window) provides an intercom-like chat window that can be included easily in any project. It provides no messaging facilities, only the view component. For message facilities you can use [SearchX](https://github.com/felipemoraes/searchx-backend) backend.
 
-![GitHub license](https://img.shields.io/github/package-json/v/kingofthestack/react-chat-window.svg?style=flat-square) <a href="https://www.npmjs.com/package/searchx-chat" target="\_parent">
-  <img alt="" src="https://img.shields.io/npm/dm/searchx-chat.svg" />
-</a>
-<br/>
 
 ## Features
 
