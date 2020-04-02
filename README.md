@@ -1,22 +1,11 @@
-# Warning!
+# SearchX Chat
 
-This repo is not actively maintained or developed by kingofthestack. PRs, issues, and feature requests may not receive any response.
-
-Thank you for the support over the years for RCW! We appologize for the inconvenience.
-
-# react-chat-window
-
-`react-chat-window` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
+This is [SearchX](https://github.com/felipemoraes/searchx) Chat tool. It is based on [react-chat-window](https://www.npmjs.com/package/react-chat-window) provides an intercom-like chat window that can be included easily in any project. It provides no messaging facilities, only the view component. For message facilities you can use [SearchX](https://github.com/felipemoraes/searchx-backend) backend.
 
 ![GitHub license](https://img.shields.io/github/package-json/v/kingofthestack/react-chat-window.svg?style=flat-square) <a href="https://www.npmjs.com/package/react-chat-window" target="\_parent">
   <img alt="" src="https://img.shields.io/npm/dm/react-chat-window.svg" />
 </a>
-<a href="https://github.com/kingofthestack/react-chat-window" target="\_parent">
-  <img alt="" src="https://img.shields.io/github/stars/kingofthestack/react-chat-window.svg?style=social&label=Star" />
-</a>
 <br/>
-
-![Demo gif of react-chat-window being used](https://puu.sh/xei2F/fd4a121185.gif)
 
 ## Features
 
@@ -24,7 +13,7 @@ Thank you for the support over the years for RCW! We appologize for the inconven
 - Backend agnostic
 - Free
 
-## [Demo](https://kingofthestack.github.io/react-chat-window/)
+## [Demo](https://felipemoraes.github.io/searchx-chat/)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -34,14 +23,14 @@ Thank you for the support over the years for RCW! We appologize for the inconven
 ## Installation
 
 ```
-$ npm install react-chat-window
+$ npm install searchx-chat
 ```
 
 ## Example
 
 ``` javascript
 import React, {Component} from 'react'
-import {Launcher} from 'react-chat-window'
+import {Launcher} from 'searchx-chat'
 
 class Demo extends Component {
 
@@ -74,8 +63,8 @@ class Demo extends Component {
     return (<div>
       <Launcher
         agentProfile={{
-          teamName: 'react-chat-window',
-          imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+          teamName: 'searchx-chat',
+          imageUrl: 'searchx-logo'
         }}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
@@ -107,16 +96,18 @@ Launcher props:
 | onFilesSelected  | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | no | Called after file has been selected from dialogue in chat window. |
 | onMessageWasSent | function([message](#message-objects)) | yes | Called when a message is sent, with a message object as an argument. |
 | showEmoji        | boolean | no | Whether or not to show the emoji button in the input bar. Defaults to `true`.
+| showFile        | boolean | no | Whether or not to show the file button in the input bar. Defaults to `true`.
 
 
 ### Message Objects
 
-Message objects are rendered differently depending on their type. Currently, only text, file, and emoji types are supported. Each message object has an `author` field which can have the value 'me' or 'them'.
+Message objects are rendered differently depending on their type. Currently, only text, file, and emoji types are supported. Each message object has an `author` field which can have the value 'me' or 'them'. Each message object has a sender which can be any string. 
 
 ``` javascript
 {
   author: 'them',
   type: 'text',
+  sender: 'sender1',
   data: {
     text: 'some text'
   }
@@ -125,6 +116,7 @@ Message objects are rendered differently depending on their type. Currently, onl
 {
   author: 'me',
   type: 'emoji',
+  sender: 'sender2',
   data: {
     code: 'someCode'
   }
@@ -134,6 +126,7 @@ Message objects are rendered differently depending on their type. Currently, onl
 {
   author: 'me',
   type: 'file',
+  sender: 'sender3',
   data: {
     url: 'somefile.mp3',
     fileName: 'Any old name'
@@ -152,7 +145,3 @@ Look like this:
   teamName: 'Da best'
 }
 ```
-
-## People Using react-chat-window
-
-If you're using react-chat-window in a product I'd love to see what you're making! Email me at dylan@kingofthestack.com
