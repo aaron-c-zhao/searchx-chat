@@ -1,6 +1,6 @@
 {
   "name": "searchx-chat",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "searchx-chat React component",
   "main": "lib/index.js",
   "module": "es/index.js",
