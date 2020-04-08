@@ -1,6 +1,6 @@
 # SearchX Chat
 
-This is [SearchX](https://github.com/felipemoraes/searchx) Chat tool. It is based on [react-chat-window](https://www.npmjs.com/package/react-chat-window) provides an intercom-like chat window that can be included easily in any project. It provides no messaging facilities, only the view component. For message facilities you can use [SearchX](https://github.com/felipemoraes/searchx-backend) backend.
+This is [SearchX](https://github.com/felipemoraes/searchx) Chat tool. It is based on [react-chat-window](https://www.npmjs.com/package/react-chat-window) and provides an intercom-like chat window that can be included easily in any project. It provides no backend facilities, only the view component. For message facilities you can use [SearchX](https://github.com/felipemoraes/searchx-backend) backend.
 
 
 ## Features
@@ -105,7 +105,8 @@ Message objects are rendered differently depending on their type. Currently, onl
   type: 'text',
   sender: 'sender1',
   data: {
-    text: 'some text'
+    text: 'some text',
+    date: 'date'
   }
 }
 
@@ -114,7 +115,8 @@ Message objects are rendered differently depending on their type. Currently, onl
   type: 'emoji',
   sender: 'sender2',
   data: {
-    code: 'someCode'
+    code: 'someCode',
+    date: 'date'
   }
 }
 
@@ -125,19 +127,7 @@ Message objects are rendered differently depending on their type. Currently, onl
   sender: 'sender3',
   data: {
     url: 'somefile.mp3',
-    fileName: 'Any old name'
+    fileName: 'Any old name',
+    date: 'date'
   }
 }
-
-```
-
-### Agent Profile Objects
-
-Look like this:
-
-```js
-{
-  imageUrl: 'https://somewhere.on/the_web.png',
-  teamName: 'Da best'
-}
-```

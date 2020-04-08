@@ -11,7 +11,6 @@ class ChatWindow extends Component {
   }
 
   onUserInputSubmit(message) {
-    console.log(message);
     this.props.onUserInputSubmit(message);
   }
 

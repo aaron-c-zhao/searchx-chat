@@ -127,7 +127,6 @@ class UserInput extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { emojiPickerIsOpen, inputActive } = this.state;
     return (
       <form className={`sc-user-input ${(inputActive ? 'active' : '')}`}>

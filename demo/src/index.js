@@ -19,7 +19,8 @@ class Demo extends Component {
   }
 
   _onMessageWasSent(message) {
-    message.sender = "1";
+    message.sender = "3";
+    message.data.date = new Date(); 
     this.setState({
       messageList: [...this.state.messageList, message]
     });
@@ -29,10 +30,11 @@ class Demo extends Component {
     const objectURL = window.URL.createObjectURL(fileList[0]);
     this.setState({
       messageList: [...this.state.messageList, {
-        type: 'file', author: 'me', sender : "1",
+        type: 'file', author: 'me', sender : "3",
         data: {
           url: objectURL,
-          fileName: fileList[0].name
+          fileName: fileList[0].name,
+          date : new Date()
         }
       }]
     });

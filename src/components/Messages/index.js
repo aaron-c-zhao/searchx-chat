@@ -23,25 +23,46 @@ class Message extends Component {
 
   render () {
     let options = {
-      size : 80
+      size : 40
     }
     var data = new Identicon(md5(this.props.message.sender), options).toString();
     let chatIconUrl = "data:image/png;base64," + data 
+
     let contentClassList = [
       'sc-message--content',
       (this.props.message.author === 'me' ? 'sent' : 'received')
     ];
+
+    let sentClass = (
+      <div className={contentClassList.join(' ')}>  
+      {this._renderMessageOfType(this.props.message.type)}     
+      <div className="sc-message--avatar" style={{
+        backgroundImage: `url(${chatIconUrl})`
+      }}></div>
+      </div>
+    )
+
+    let receiveClass = (
+      <div className={contentClassList.join(' ')}>     
+      <div className="sc-message--avatar" style={{
+        backgroundImage: `url(${chatIconUrl})`
+      }}></div>
+      {this._renderMessageOfType(this.props.message.type)}
+      
+      </div>
+    )
+
     return (
       <div className="sc-message">
-        <div className={contentClassList.join(' ')}>
-          <div className="sc-message--avatar" style={{
-            backgroundImage: `url(${chatIconUrl})`
-          }}></div>
-          
-          {this._renderMessageOfType(this.props.message.type)}
-        </div>
-      </div>);
+        {this.props.message.author === 'me' ? 
+        sentClass : 
+        receiveClass}
+      </div>
+      
+    )
   }
 }
+
+
 
 export default Message;
