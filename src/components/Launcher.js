@@ -15,11 +15,11 @@ class Launcher extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (this.props.mute) { return; }
-    const nextMessage = nextProps.messageList[nextProps.messageList.length - 1];
+    const nextMessage = this.props.messageList[this.props.messageList.length - 1];
     const isIncoming = (nextMessage || {}).author === 'them';
-    const isNew = nextProps.messageList.length > this.props.messageList.length;
+    const isNew = this.props.messageList.length > prevProps.messageList.length;
     if (isIncoming && isNew) {
       this.playIncomingMessageSound();
     }
