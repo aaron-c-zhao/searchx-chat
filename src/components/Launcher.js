@@ -18,7 +18,7 @@ class Launcher extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.mute) { return; }
     const nextMessage = this.props.messageList[this.props.messageList.length - 1];
-    const isIncoming = (nextMessage || {}).author === 'them';
+    const isIncoming = (nextMessage || {}).author === 'them' || (nextMessage || {}).author === 'bot';
     const isNew = this.props.messageList.length > prevProps.messageList.length;
     if (isIncoming && isNew) {
       this.playIncomingMessageSound();
