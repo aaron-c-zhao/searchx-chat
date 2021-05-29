@@ -10,6 +10,14 @@ import MessageOptions from './MessageOptions';
 
 class Message extends Component {
 
+  constructor (props) {
+    super(props);
+    
+    this.state = {
+      isClicked: null
+    }
+  }
+
   _renderMessageOfType(type) {
     switch(type) {
     case 'text':
@@ -23,10 +31,22 @@ class Message extends Component {
         message={this.props.message}
         yes={this.props.yes}
         no={this.props.no}
+        onToggleButton={this._onToggleButton.bind(this)}
+        isClicked={this._isClicked.bind(this)}
         />;
     default:
       console.error(`Attempting to load message with unsupported file type '${type}'`);
     }
+  }
+
+  _onToggleButton(id) {
+    if (!this.state.isClicked) {
+      this.setState({isClicked: id});
+    }
+  }
+
+  _isClicked() {
+    return this.state.isClicked;
   }
 
   render () {

@@ -3,15 +3,20 @@ import TextMessage from './TextMessage'
 
 const MessageOptions = (props) => {
   const options = [
-    {text: "Yep", handler: () => {props.yes()}, id: 1},
-    {text: "Nope", handler: () => {props.no()}, id: 2}
+    {text: "Yep", handler: props.yes, id: 1},
+    {text: "Nope", handler: props.no, id: 2}
   ];
 
   const optionsMarkup = options.map((option) => (
     <button
-      className = "message-options-button"
+      className = {props.isClicked() === option.id? "message-options-button-clicked" : "message-options-button"}
       key = {option.id}
-      onClick = {option.handler}>
+      onClick = { () => {
+        if (!props.isClicked()) {
+          option.handler();
+          props.onToggleButton(option.id);
+        } 
+      }}>
         {option.text}
       </button>
   ));
