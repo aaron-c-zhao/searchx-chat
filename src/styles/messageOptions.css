@@ -1,0 +1,19 @@
+.message-options-container {
+    /* width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap; */
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap
+}
+
+
+.message-options-button {
+    padding: 0.5rem;
+    border-radius: 25px;
+    background: transparent;
+    border: 1px solid #00A6D6;
+    margin: 3px;
+    margin-left: 10px;
+}

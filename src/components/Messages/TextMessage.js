@@ -7,11 +7,13 @@ const TextMessage = (props) => {
   const dateString = (
     <div className="sc-message--date"> {date.toLocaleTimeString([], {timeStyle: 'short'}).replace(/(\r\n|\n|\r)/gm,"")} </div>
   );
-  return <div className="sc-message--text">{
-    <Linkify properties={{ target: '_blank' }}>{props.data.text}</Linkify>
-    }
-    {dateString}
-  </div>;
+  return (
+    <div className="sc-message--text">{
+      <Linkify properties={{ target: '_blank' }}>{props.data.text}</Linkify>
+      }
+      {dateString}
+    </div>
+  );
 };
 
 export default TextMessage;

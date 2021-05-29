@@ -5,6 +5,7 @@ import FileMessage from './FileMessage';
 import Identicon from 'identicon.js';
 import md5 from 'md5';
 import botIcon from './../../assets/bot-icon.jpg'
+import MessageOptions from './MessageOptions';
 
 
 class Message extends Component {
@@ -12,11 +13,13 @@ class Message extends Component {
   _renderMessageOfType(type) {
     switch(type) {
     case 'text':
-      return <TextMessage {...this.props.message} />;
+      return <div className="message-options-container"><TextMessage {...this.props.message} /></div>;
     case 'emoji':
       return <EmojiMessage {...this.props.message} />;
     case 'file':
       return <FileMessage {...this.props.message} />;
+    case 'confirm':
+      return <MessageOptions {...this.props.message} />;
     default:
       console.error(`Attempting to load message with unsupported file type '${type}'`);
     }
