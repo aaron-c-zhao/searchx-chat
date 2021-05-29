@@ -12,13 +12,13 @@ class Message extends Component {
 
   _renderMessageOfType(type) {
     switch(type) {
-    // case 'text':
-    //   return <div className="message-options-container"><TextMessage {...this.props.message} /></div>;
+    case 'text':
+      return <div className="message-options-container"><TextMessage {...this.props.message} /></div>;
     case 'emoji':
       return <EmojiMessage {...this.props.message} />;
     case 'file':
       return <FileMessage {...this.props.message} />;
-    case 'text':
+    case 'confirm':
       return <MessageOptions 
         message={this.props.message}
         yes={this.props.yes}
