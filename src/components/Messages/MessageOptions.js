@@ -3,8 +3,8 @@ import TextMessage from './TextMessage'
 
 const MessageOptions = (props) => {
   const options = [
-    {text: "Yes, looks good!", handler: () => {}, id: 1},
-    {text: "Nope", handler: () => {}, id: 2}
+    {text: "Yep", handler: () => {props.yes()}, id: 1},
+    {text: "Nope", handler: () => {props.no()}, id: 2}
   ];
 
   const optionsMarkup = options.map((option) => (
@@ -19,7 +19,7 @@ const MessageOptions = (props) => {
   return ( 
       <div 
         className = "message-options-container">
-        <TextMessage {...props}/>
+        <TextMessage {...props.message}/>
         {optionsMarkup}
       </div>
   );

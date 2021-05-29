@@ -55,6 +55,8 @@ class Launcher extends Component {
         <ChatWindow
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
+          yes={this.props.confirmYes}
+          no={this.props.confirmNo}
           onFilesSelected={this.props.onFilesSelected}
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
@@ -80,6 +82,8 @@ Launcher.propTypes = {
   onMessageWasReceived: PropTypes.func,
   onMessageWasSent: PropTypes.func,
   newMessagesCount: PropTypes.number,
+  confirmYes: PropTypes.func,
+  confirmNo: PropTypes.func,
   isOpen: PropTypes.bool,
   handleClick: PropTypes.func,
   messageList: PropTypes.arrayOf(PropTypes.object),

@@ -12,14 +12,18 @@ class Message extends Component {
 
   _renderMessageOfType(type) {
     switch(type) {
-    case 'text':
-      return <div className="message-options-container"><TextMessage {...this.props.message} /></div>;
+    // case 'text':
+    //   return <div className="message-options-container"><TextMessage {...this.props.message} /></div>;
     case 'emoji':
       return <EmojiMessage {...this.props.message} />;
     case 'file':
       return <FileMessage {...this.props.message} />;
-    case 'confirm':
-      return <MessageOptions {...this.props.message} />;
+    case 'text':
+      return <MessageOptions 
+        message={this.props.message}
+        yes={this.props.yes}
+        no={this.props.no}
+        />;
     default:
       console.error(`Attempting to load message with unsupported file type '${type}'`);
     }
