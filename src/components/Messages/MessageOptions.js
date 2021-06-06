@@ -11,7 +11,7 @@ const MessageOptions = (props) => {
     <button
       className = {props.isClicked() === option.id? "message-options-button-clicked" : "message-options-button"}
       key = {option.id}
-      onClick = { () => {
+      onClick = {() => {
         if (!props.isClicked()) {
           option.handler();
           props.onToggleButton(option.id);
