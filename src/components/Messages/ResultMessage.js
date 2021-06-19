@@ -1,4 +1,5 @@
 import React from "react";
+import noPhoto from "../../assets/photo-not-available.jpg";
 
 // const ResultMessage = (props) => {
 //   const results = props.message.data.text.slice();
@@ -30,7 +31,7 @@ const ResultMessage = (props) => {
       <div
         className="result-message-image"
         style={{
-          backgroundImage: `url(${result.image.url})`,
+          backgroundImage: (result.image.url)? `url(${result.image.url})`: `url(${noPhoto})`,
         }}
       >
         <img src={result.image.url} />
