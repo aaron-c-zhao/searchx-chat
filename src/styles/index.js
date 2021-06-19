@@ -6,3 +6,4 @@ import './message.css';
 import './user-input.css';
 import './popup-window.css';
 import './messageOptions.css';
+import './result.css';
