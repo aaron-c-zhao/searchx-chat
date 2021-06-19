@@ -35,7 +35,9 @@ const ResultMessage = (props) => {
       >
         <img src={result.image.url} />
       </div>
-      <h2 className="result-message-title">
+      <h2 
+        className="result-message-title"
+        onClick={() => props.openUrl(result.website)}>
         {`${index + 1}.${result.name}`}
       </h2>
       <p className="result-message-rating">

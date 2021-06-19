@@ -57,6 +57,7 @@ class Launcher extends Component {
           onUserInputSubmit={this.props.onMessageWasSent}
           yes={this.props.confirmYes}
           no={this.props.confirmNo}
+          openUrl={this.props.openUrl}
           onFilesSelected={this.props.onFilesSelected}
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
@@ -84,6 +85,7 @@ Launcher.propTypes = {
   newMessagesCount: PropTypes.number,
   confirmYes: PropTypes.func,
   confirmNo: PropTypes.func,
+  openUrl: PropTypes.func,
   isOpen: PropTypes.bool,
   handleClick: PropTypes.func,
   messageList: PropTypes.arrayOf(PropTypes.object),
