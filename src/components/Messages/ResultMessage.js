@@ -46,7 +46,7 @@ const ResultMessage = (props) => {
           {`${result.rating}/5.0 `}
         </span>
         <span className="result-message-rating-cuisine">
-          {(!result.cuisine.length)? '' : result.cuisine[0].name}
+          {(!result.type.length)? '' : result.type[0].name}
           {(result.price_level === '')? '' : ` (${result.price_level})`}
         </span>
       </p>
